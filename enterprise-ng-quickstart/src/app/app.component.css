@@ -18,3 +18,16 @@
  .is-border{
      border: 3px solid red !important
  }
+
+
+ .year{
+    display: flex;
+    flex-wrap: wrap;
+ 
+}
+
+.month{
+
+    width: 25vw;
+ 
+}

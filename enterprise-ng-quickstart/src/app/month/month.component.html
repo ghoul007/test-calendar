@@ -1,19 +1,73 @@
-<div soho-calendar
-    [month]="initialMonth"
-    [year]="initialYear"
-    [showViewChanger]="showViewChanger"
-    [selectedCallback]="onCalendarDateSelectedCallback"
+<div class="year">
+  
+  <div class="month">
+    <div soho-calendar
+    [month]="1"
+    [year]="2022"
+    (monthRendered)="onRenderMonth($event)"
+    (selected)="onSelected($event)"
+    (eventClick)="onEventClicked($event)"
+    (eventDblClick)="onEventDblClicked($event)"
+    (eventContextMenu)="onCalendarEventContextMenu($event)"
+    [eventTooltip]="eventTooltip"
+    [iconTooltip]="iconTooltip"
+    [events]="dates$|async"
+    [eventTypes]="eventTypes"
+    >
+    <div soho-calendar-monthview></div>
+    <div soho-calendar-week-view></div>
+  </div>
+  
+</div>
  
+  <div class="month">
+    <div soho-calendar
+    [month]="2"
+    [year]="2022"
+    (monthRendered)="onRenderMonth($event)"
     (selected)="onSelected($event)"
     (eventClick)="onEventClicked($event)"
     (eventDblClick)="onEventDblClicked($event)"
      (eventContextMenu)="onCalendarEventContextMenu($event)"
      [eventTooltip]="eventTooltip"
      [iconTooltip]="iconTooltip"
+     [events]="dates$|async"
+     [eventTypes]="eventTypes"
 >
   <div soho-calendar-monthview></div>
   <div soho-calendar-week-view></div>
 </div>
+
+  </div>
+  <div class="month">
+    <div soho-calendar
+    [month]="3"
+    [year]="2022"
+    (monthRendered)="onRenderMonth($event)"
+    (selected)="onSelected($event)"
+    (eventClick)="onEventClicked($event)"
+    (eventDblClick)="onEventDblClicked($event)"
+     (eventContextMenu)="onCalendarEventContextMenu($event)"
+     [eventTooltip]="eventTooltip"
+     [iconTooltip]="iconTooltip"
+     [events]="dates$|async"
+     [eventTypes]="eventTypes"
+>
+  <div soho-calendar-monthview></div>
+  <div soho-calendar-week-view></div>
+</div>
+
+  </div> 
+
+  <div class="month font-size-lg">
+    ***{{dates$|async|json}}
+    <hr>
+    {{eventTypes|json}}
+  
+  </div>
+</div>
+
+
 
 
  
